@@ -1,0 +1,20 @@
+@use "sass:math";
+
+@import "vars/colors";
+@import "vars/variables";
+
+@import "base/mixin";
+@import "base/null";
+@import "base/elements";
+
+@include font('Montserrat', 'Montserrat-Regular', 400, 'normal');
+@include font('Montserrat', 'Montserrat-Medium', 500, 'normal');
+@include font('Montserrat', 'Montserrat-SemiBold', 600, 'normal');
+@include font('Montserrat', 'Montserrat-Bold', 700, 'normal');
+
+@import "base";
+
+@import "./parts/header";
+@import "./parts/footer";
+
+@import "./page/main";

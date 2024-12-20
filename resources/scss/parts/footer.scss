@@ -1,0 +1,55 @@
+.footer {
+    color: #ffffff;
+    background: #333333;
+    padding: 60px 0;
+
+    &__content {
+        display: grid;
+
+        @media screen and (min-width: #{$desktop}) {
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+        }
+        @media screen and (max-width: #{$desktop}) {
+          gap: 20px;
+        }
+    }
+
+    &__logoBox {
+        @media screen and (max-width: #{$desktop}) {
+
+            margin-bottom: 24px;
+        }
+    }
+
+    &__center {
+        @media screen and (min-width: #{$desktop}) {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__menu {
+        gap: 36px;
+
+        .menu__link {
+            font-family: 'FuturaBookC';
+        }
+
+        @media screen and (min-width: #{$desktop}) {
+            display: flex;
+            align-items: center;
+        }
+        @media screen and (max-width: #{$desktop}) {
+            display: grid;
+            gap: 16px;
+        }
+    }
+
+    &__btn {
+        max-width: 260px;
+        background: #969AF7;
+    }
+}

@@ -1,0 +1,89 @@
+@use 'sass:math';
+
+//Подключение шрифта
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff2") format("woff2"),
+            url("../fonts/#{$file_name}.woff") format("woff"),
+            url("../fonts/#{$file_name}.ttf") format("ttf"),
+            url("../fonts/#{$file_name}.otf") format("otf"),
+            url("../fonts/#{$file_name}.svg") format("svg");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+
+@mixin underlineHover($bgcolor: #ffffff, $position: 'left', $in: false, $width: 100%) {
+
+    @if($in == false) {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -0.125em;
+
+            @if $position=='left' {
+                left: 0;
+            }
+            @else if $position=='right' {
+              right: 0;
+            }
+            @else if $position=='center' {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            width: 0%;
+            height: .075em;
+            display: inline-block;
+            background: $bgcolor;
+            transition: .4s;
+        }
+
+        &:hover {
+            &::after {
+              width: $width;
+            }
+        }
+    }
+    @else {
+        >span {
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -0.125em;
+
+                @if $position=='left' {
+                    left: 0;
+                }
+                @else if $position=='right' {
+                  right: 0;
+                }
+                @else if $position=='center' {
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                width: 0%;
+                height: .075em;
+                display: inline-block;
+                background: $bgcolor;
+                transition: .4s;
+            }
+        }
+        &:hover {
+            >span {
+                &::after {
+                    width: $width;
+                }
+            }
+        }
+    }
+
+}
+
