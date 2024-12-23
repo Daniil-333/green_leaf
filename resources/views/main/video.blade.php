@@ -6,13 +6,13 @@
                 <h2 class="video__title">Посмотрите и&nbsp;убедитесь сами</h2>
                 <button type="button" class="video__btn btn btn_thirdy">Видео</button>
                 <picture>
-                    <source type="image/webp" srcset="{{ asset("/storage/img/bear2.webp") }}">
-                    <img data-src="{{ asset("/storage/img/bear2.png") }}" alt="" class="video__img b-lazy">
+                    <source srcset="" type="image/webp" data-srcset="{{ asset("/storage/img/bear2.webp") }}">
+                    <img src="" data-src="{{ asset("/storage/img/bear2.png") }}" alt="" class="video__img b-lazy">
                 </picture>
             </div>
 
             <div class="video__right _lazy">
-                <iframe data-src="https://vkvideo.ru/video_ext.php?oid=-8089324&id=456243664&hash=00da413740201fe8" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" class="b-lazy"></iframe>
+                <iframe data-src="https://vkvideo.ru/video_ext.php?oid=-8089324&id=456243664&hash=00da413740201fe8" frameborder="0" allowfullscreen="1" allow="encrypted-media; fullscreen; picture-in-picture" title="Linkin Park" class="b-lazy"></iframe>
             </div>
 
         </div>

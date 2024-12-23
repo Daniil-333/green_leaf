@@ -22,9 +22,9 @@
                                 'postfix_name' => 'tablet',
                             ],
                         ] as $dir => $bear)
-                        <source media="(max-width: {{ $bear['size'] }}px)" srcset="{{ asset("/storage/img/bears/$dir/hero-{$bear['postfix_name']}-bear$i.png") }}">
+                        <source srcset="" media="(max-width: {{ $bear['size'] }}px)" data-srcset="{{ asset("/storage/img/bears/$dir/hero-{$bear['postfix_name']}-bear$i.png") }}">
                         @endforeach
-                        <img src="{{ asset("/storage/img/bears/desktop/hero-bear$i.png") }}" alt="" class="promo__img promo__img_{{ $i }} b-lazy">
+                        <img src="" data-src="{{ asset("/storage/img/bears/desktop/hero-bear$i.png") }}" alt="" class="promo__img promo__img_{{ $i }} b-lazy">
                     </picture>
 
                 @endfor

@@ -1,12 +1,19 @@
 .footer {
     color: #ffffff;
     background: $secondary-color;
-    padding: 200px 0 180px;
+
 
     &__content {
         display: grid;
         justify-items: center;
         font-weight: 500;
         line-height: 1.19;
+
+        @media screen and (min-width: #{$tabletM}) {
+            padding: 200px 0 180px;
+        }
+        @media screen and (max-width: #{$tabletM}) {
+          padding: 130px 0;
+        }
     }
 }

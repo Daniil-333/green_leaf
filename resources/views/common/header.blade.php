@@ -2,7 +2,7 @@
     <div class="header__container">
         <div class="header__content">
 
-            <button id="burger" class="header__burger burger">
+            <button id="burger" class="header__burger burger" aria-label="burger">
                 <span></span>
                 <span></span>
                 <span></span>

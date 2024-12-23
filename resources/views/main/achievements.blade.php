@@ -13,8 +13,8 @@
                                 <div class="achievementsItem__picture">
                                     @if(isset($achievement['img']))
                                         <picture>
-                                            <source type="image/webp" srcset="{{ asset("storage/img/achievements/{$achievement['img']}.webp") }}">
-                                            <img data-src="{{ asset("storage/img/achievements/{$achievement['img']}.png") }}" alt="{{ "{$achievement['title']}" }}" class="b-lazy">
+                                            <source srcset="" type="image/webp" data-srcset="{{ asset("storage/img/achievements/{$achievement['img']}.webp") }}">
+                                            <img src="" data-src="{{ asset("storage/img/achievements/{$achievement['img']}.png") }}" alt="{{ "{$achievement['title']}" }}" class="b-lazy">
                                         </picture>
                                     @endif
                                 </div>
