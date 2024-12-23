@@ -6,7 +6,10 @@ window.$ = window.jQuery = jQuery;
 import {Tools} from './common/tools.js';
 window.Tools = Tools;
 
+import Blazy from 'blazy';
+
 import {Burger} from "./class/Burger";
+import {Prioritets} from "./class/Prioritets.js";
 
 class Base {
 
@@ -22,6 +25,7 @@ class Base {
             document.documentElement.classList.add('no-webp'));
 
         new Burger();
+        new Prioritets()
     }
 
     callInitByProto(proto) {
@@ -53,36 +57,27 @@ class Base {
         });
     }
 
-    initDropList() {
-        $(document).on('click', '[data-drop-box]', function () {
-            if(!$(this).hasClass('_open')) {
-                $(this).addClass('_open');
-            }
-            else {
-                $(this).removeClass('_open');
+    initLazyLoad() {
+        new Blazy({
+            success: function (el) {
+                const $parent = $(el).parent();
+                if($parent.hasClass('_lazy')) $parent.removeClass('_lazy');
             }
         });
     }
 
-    initLazyMap() {
-        const $map = $('#map');
-        const $script = $('#ymap_lazy');
-        if(!$map.length) return;
+    initLikes() {
+        $(document).on('click', '[data-like]', function () {
+            let count = $(this).attr('data-like');
+            const $count = $(this).find('.js-like-count');
 
-        const calcScroll = function () {
-            let hT = $map.offset().top,
-                hH = $map.height(),
-                wH = $(window).height(),
-                wS = $(window).scrollTop();
+            $(this).toggleClass('_active');
 
-            // console.log(wS, hT, hH, wH);
-            if (wS > (hT+hH-wH)){
-                $script.attr('src', $script.attr('data-src')).removeAttr('data-src');
-            }
-        }
-        let handle = Tools.debounce(calcScroll, 100);
+            const isActive = $(this).hasClass('_active');
 
-        $(window).on('scroll', handle);
+            $(this).attr('data-like', isActive ? ++count : --count)
+            $count.text(isActive ? count : count);
+        })
     }
 }
 

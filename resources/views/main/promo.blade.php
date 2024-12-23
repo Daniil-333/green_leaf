@@ -1,10 +1,9 @@
 <section class="promo section">
-
     <div class="promo__container">
         <div class="promo__content">
             <h1 class="promo__title title">Приоритеты</h1>
 
-            <div class="promo__pictures">
+            <div class="promo__pictures _all">
 
                 @for($i = 16; $i > 0; $i--)
 
@@ -32,36 +31,30 @@
             </div>
 
             <div class="promo__filter">
-                <div class="ui-toggle">
-                    <div class="ui-toggle__btn">
-                        <span>Приоритеты</span>
-                        <img src="{{ asset('/storage/img/icon/arrow.svg') }}" alt="" class="ui-toggle__icon">
-                    </div>
-                    <div class="ui-toggle__list">
-                        @foreach([
-                            'Все направления',
-                            'Забота о каждом нуждающемся',
-                            'Развитие регионов и транспортной инфраструктуры страны',
-                            'Культура, история, традиции',
-                            'Образование и передовая наука',
-                            'Развитие села',
-                            'Крепкая семья',
-                            'Экология для жизни',
-                            'Разитие туризма',
-                            'Развитие новых регионов',
-                            'Государство для человека',
-                            'Внешняя и оборонная политика',
-                            'Здоровье человека',
-                            'Экономика развития',
-                            'Гражданская солидарность и молодежная политика',
-                            'Хорошая работа — достаток в доме',
-                            'Удобная и комфортная жизнь',
-                        ] as $prioritetBtn)
-                            <div class="ui-toggle__item">
-                                <span>{{ $prioritetBtn }}</span>
-                                <img src="{{ asset('/storage/img/icon/x.svg') }}" alt="" class="ui-toggle__icon">
+                <div data-drop-box class="ui-toggle">
+                    <div class="ui-toggle__wrap">
+                        <div class="ui-toggle__main">
+                            <div data-drop-btn class="ui-toggle__btn">
+                                <span>Приоритеты</span>
+                                <img src="{{ asset('/storage/img/icon/arrow.svg') }}" alt="" class="ui-toggle__icon">
                             </div>
-                        @endforeach
+                            <div class="ui-toggle__list">
+                                @foreach($filterPriority as $priority)
+                                    <label data-drop-item class="ui-checkbox">
+                                        <input type="checkbox" name="prioritets[]" value="{{ ($loop->first ? 'all' : $loop->index) }}" class="js-inputDrop" @if($loop->first) checked @endif>
+                                        <span class="ui-checkbox__label">{{ $priority }}</span>
+                                    </label>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="ui-toggle__chain">
+                            @foreach($filterPriority as $priority)
+                                <label class="ui-checkbox ui-checkbox_chain" {{ (!$loop->first ? 'hidden' : '') }}>
+                                    <input type="checkbox" value="{{ ($loop->first ? 'all' : $loop->index) }}" class="js-inputChain" @if($loop->first) checked @endif>
+                                    <span class="ui-checkbox__label">{{ $priority }}</span>
+                                </label>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>

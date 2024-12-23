@@ -36,6 +36,27 @@
   }
 
   &-toggle {
+    position: relative;
+
+    &._open {
+      .ui-toggle__list {
+        opacity: 1;
+        pointer-events: all;
+      }
+      .ui-toggle__icon {
+        transform: none;
+      }
+    }
+
+    &__wrap {
+      display: flex;
+      align-items: flex-start;
+      gap: .5rem;
+    }
+    
+    &__main {
+      position: relative;
+    }
 
     &__btn {
       display: flex;
@@ -48,68 +69,151 @@
       color: #323232;
       background: #ffffff;
       border-radius: 100px;
+      cursor: pointer;
       padding: .5rem 1rem;
     }
 
     &__icon {
       transform: rotateX(180deg);
+      transition: transform .3s;
     }
 
     &__list {
-      max-width: 340px;
+      position: absolute;
+      left: 0;
+      top: calc(100% + 1rem);
+      z-index: 1;
+      width: 340px;
       display: flex;
       flex-wrap: wrap;
+      gap: .5rem;
       background: #ffffff;
       box-shadow: 0 4px 10px 0 #0000001A;
       border-radius: 1rem;
       padding: 1rem .5rem;
+      opacity: 0;
+      pointer-events: none;
     }
 
-    &__item {
+    &__chain {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-weight: 500;
-      font-size: 14px;
-      color: #323232;
-      background: $fon-color;
-      border-radius: 100px;
-      padding: .5rem 1rem;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+  }
 
-      >span {
-        text-align: center;
+  &-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 100px;
+
+    &_chain {
+      >input {
+        ~ .ui-checkbox__label {
+          display: none;
+        }
+
+        &:checked {
+          ~ .ui-checkbox__label {
+            display: flex;
+          }
+        }
       }
     }
 
+    >input {
+      display: none;
+
+      &:checked {
+        ~ .ui-checkbox__label {
+            color: #ffffff;
+            text-align: center;
+            background: $main-color;
+            gap: 8px;
+
+          &::after {
+            width: 12px;
+          }
+        }
+      }
+    }
+
+    &__label {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.22;
+      color: #323232;
+      display: flex;
+      align-items: center;
+      background: $fon-color;
+      border-radius: inherit;
+      padding: .5rem 1rem;
+      pointer-events: none;
+      transition: .3s;
+
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 0;
+        height: 12px;
+        background: url("/public/storage/img/icon/x.svg");
+        pointer-events: none;
+        transition: .3s;
+      }
+    }
   }
 }
 
 .btn {
   position: relative;
-  width: 100%;
-  font-size: 16px;
   text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  height: 41px;
   color: #ffffff;
-  text-transform: uppercase;
-  border-radius: .625rem;
-  background-color: #FFA500;
+  background-color: $link-color;
+  border-radius: 100px;
   white-space: nowrap;
-  padding: 15px 25px;
+  padding: 12px 32px;
   transition: .3s;
 
-  >span {
-    position: relative;
-    z-index: 2;
+  &_secondary {
+    background-color: $secondary-color;
+
+    @media screen and (any-hover: hover) {
+      &:hover {
+        background-color: $link-color;
+      }
+      &:active {
+        background-color: $active-color;
+      }
+    }
+  }
+
+  &_thirdy {
+    background-color: $main-color;
+
+    @media screen and (any-hover: hover) {
+      &:hover {
+        background-color: $link-color;
+      }
+      &:active {
+        background-color: $active-color;
+      }
+    }
   }
 
   @media screen and (any-hover: hover) {
     &:hover {
-      background-color: #ef9800;
+      background-color: $secondary-color;
     }
 
     &:active {
-      background-color: #d68b00;
+      background-color: $active-color;
     }
   }
 }
@@ -119,20 +223,67 @@
   font-size: 2rem;
   line-height: 1.22;
 
-  @media screen and (max-width: #{$tabletM}) {
+  @media screen and (max-width: #{$tabletL}) {
     font-size: 1.5rem;
   }
 }
 
 .section {
   position: relative;
+}
 
-  &__bg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
+.heading {
+  font-weight: 600;
+
+  @media screen and (min-width: #{$tabletL}) {
+    font-size: 20px;
+  }
+  @media screen and (max-width: #{$tabletL}) {
+    font-size: 1rem;
+  }
+}
+
+.like {
+
+  &._active {
+    .like__icon {
+      background: $link-color;
+    }
+  }
+
+  &._zero {
+    .like__icon {
+      background: $zero-color;
+
+      >svg {
+        path {
+          stroke: $link-color;
+        }
+      }
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    background: $fon-color;
+    border-radius: 100px;
+    padding: 4px;
+  }
+
+  &__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $active-color;
+    border-radius: 100px;
+  }
+
+  &__count {
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0 4px;
   }
 }
