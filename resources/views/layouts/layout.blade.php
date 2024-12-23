@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta name="robots" content="noindex">
+    <meta name="robots" content="noindex, nofollow">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="description">
+    <meta name="keywords" content="keywords">
 
     <link rel="shortcut icon" href="{{ asset('favicon.jpeg') }}">
     <title>@section('title')@show</title>

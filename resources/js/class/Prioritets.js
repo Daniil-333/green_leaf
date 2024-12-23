@@ -38,23 +38,23 @@ export class Prioritets {
             this.$checkboxesDrop.not($target).each(function () {
                 $(this).prop('checked', false)
             })
-            console.log('выбран "Все"')
+            // console.log('выбран "Все"')
         }
         // если не выбран ни один
         else if(!checkedCheckboxes.length) {
             this.$checkboxDropAll.prop('checked', true)
             this.$checkboxChainAll.prop('checked', true)
-            console.log('не выбран ни один')
+            // console.log('не выбран ни один')
         }
         // если выбран любой кроме "Все"
         else if(!isAll && isChecked) {
             this.$checkboxDropAll.prop('checked', false);
             this.$checkboxChainAll.prop('checked', false);
-            console.log('выбран любой кроме "Все"')
+            // console.log('выбран любой кроме "Все"')
         }
         // если снят любой Чекебокс
         else {
-            console.log('снят любой Чекебокс')
+            // console.log('снят любой Чекебокс')
         }
 
         $('.promo__pictures').toggleClass('_all', this.$checkboxDropAll.prop('checked'));
@@ -81,7 +81,14 @@ export class Prioritets {
     handleChain(position, isChecked, isAll) {
         const inputChain = $(`${this.checboxChainSelector}[value="${position}"]`);
 
-        if(isAll && !isChecked) return false;
+        if(isAll && !isChecked) {
+            return false
+        }
+        else if(isAll && isChecked) {
+            this.$checkboxesChain.not(inputChain).each(function () {
+                $(this).prop('checked', false)
+            })
+        }
 
         inputChain.prop('checked', isChecked);
         inputChain.parent().attr('hidden', !isChecked)

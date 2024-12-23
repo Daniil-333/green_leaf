@@ -5,7 +5,10 @@
             <div class="video__left">
                 <h2 class="video__title">Посмотрите и&nbsp;убедитесь сами</h2>
                 <button type="button" class="video__btn btn btn_thirdy">Видео</button>
-                <img src="{{ asset("/storage/img/bear2.png") }}" alt="" class="video__img b-lazy">
+                <picture>
+                    <source type="image/webp" srcset="{{ asset("/storage/img/bear2.webp") }}">
+                    <img data-src="{{ asset("/storage/img/bear2.png") }}" alt="" class="video__img b-lazy">
+                </picture>
             </div>
 
             <div class="video__right _lazy">
