@@ -56,7 +56,7 @@ export class Prioritets {
             this.$checkboxDropAll.prop('checked', false);
             this.$checkboxChainAll.prop('checked', false);
             this.$checkboxChainAll.parent().attr('hidden', 1)
-            // console.log('выбран любой кроме "Все"')
+            console.log('выбран любой кроме "Все"')
         }
         // если снят любой Чекебокс
         else {
@@ -66,7 +66,7 @@ export class Prioritets {
         $('.promo__pictures').toggleClass('_all', this.$checkboxDropAll.prop('checked'));
 
         this.highlightPicture(position);
-        this.handleChain(position, isChecked, isAll)
+        this.handleChain(position, isChecked, isAll, checkedCheckboxes)
     }
 
     highlightPicture(position) {
@@ -84,11 +84,16 @@ export class Prioritets {
         $(`${this.checboxDropSelector}[value="${$target.val()}"]`).trigger('click');
     }
 
-    handleChain(position, isChecked, isAll) {
+    handleChain(position, isChecked, isAll, checkedCheckboxes) {
         const inputChain = $(`${this.checboxChainSelector}[value="${position}"]`);
+
+        console.log(position, isChecked, isAll, checkedCheckboxes)
 
         if(isAll && !isChecked) {
             return false
+        }
+        else if(!checkedCheckboxes.length) {
+            this.$checkboxChainAll.parent().removeAttr('hidden')
         }
         else if(isAll && isChecked) {
             this.$checkboxesChain.not(inputChain).each(function () {
