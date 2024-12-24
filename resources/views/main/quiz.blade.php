@@ -14,8 +14,8 @@
 
             <div class="quiz__right">
                 <picture>
-                    <source srcset="" type="image/webp" data-srcset="{{ asset("/storage/img/bear.webp") }}">
-                    <img src="" data-src="{{ asset("/storage/img/bear.png") }}" alt="" class="quiz__img b-lazy">
+                    <source srcset="{{ $loader_secondary }}" type="image/webp" data-srcset="{{ asset("/storage/img/bear.webp") }}">
+                    <img src="{{ $loader_secondary }}" data-src="{{ asset("/storage/img/bear.png") }}" alt="" class="quiz__img b-lazy">
                 </picture>
             </div>
 

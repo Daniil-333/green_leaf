@@ -27,6 +27,7 @@ export class Prioritets {
     }
 
     handleCheckboxes(e, options) {
+        const obj = this;
         const $target = $(e.target);
         const position = $target.val();
         const isChecked = $target.is(':checked');
@@ -37,6 +38,10 @@ export class Prioritets {
         if(isAll && isChecked) {
             this.$checkboxesDrop.not($target).each(function () {
                 $(this).prop('checked', false)
+                $('.promo__img').removeClass('_active');
+                obj.$checkboxesChain.each(function () {
+                    $(this).parent().attr('hidden', 1)
+                });
             })
             // console.log('выбран "Все"')
         }
@@ -50,6 +55,7 @@ export class Prioritets {
         else if(!isAll && isChecked) {
             this.$checkboxDropAll.prop('checked', false);
             this.$checkboxChainAll.prop('checked', false);
+            this.$checkboxChainAll.parent().attr('hidden', 1)
             // console.log('выбран любой кроме "Все"')
         }
         // если снят любой Чекебокс

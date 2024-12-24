@@ -87,3 +87,11 @@
 
 }
 
+@mixin loader($height) {
+    &.b-lazy {
+        &:not(&.b-loaded) {
+            height: $height;
+        }
+    }
+}
+

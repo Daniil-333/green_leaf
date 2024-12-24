@@ -16,6 +16,8 @@ class MainController extends Controller
         return view('index')->with([
             'filterPriority' => $this->getFilter(),
             'achievements' => $this->getItems(),
+            'loader_main' => asset('/storage/img/spinner_main.svg'),
+            'loader_secondary' => asset('/storage/img/spinner_secondary.svg')
         ]);
     }
 

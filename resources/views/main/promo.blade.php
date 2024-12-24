@@ -3,7 +3,7 @@
         <div class="promo__content">
             <h1 class="promo__title title">Приоритеты</h1>
 
-            <div class="promo__pictures _all">
+            <div class="promo__pictures _all _lazy">
 
                 @for($i = 16; $i > 0; $i--)
 
@@ -22,9 +22,9 @@
                                 'postfix_name' => 'tablet',
                             ],
                         ] as $dir => $bear)
-                        <source srcset="" media="(max-width: {{ $bear['size'] }}px)" data-srcset="{{ asset("/storage/img/bears/$dir/hero-{$bear['postfix_name']}-bear$i.png") }}">
+                        <source srcset="{{ $loader_main }}" media="(max-width: {{ $bear['size'] }}px)" data-srcset="{{ asset("/storage/img/bears/$dir/hero-{$bear['postfix_name']}-bear$i.png") }}">
                         @endforeach
-                        <img src="" data-src="{{ asset("/storage/img/bears/desktop/hero-bear$i.png") }}" alt="" class="promo__img promo__img_{{ $i }} b-lazy">
+                        <img src="{{ $loader_main }}" data-src="{{ asset("/storage/img/bears/desktop/hero-bear$i.png") }}" alt="" class="promo__img promo__img_{{ $i }} b-lazy">
                     </picture>
 
                 @endfor

@@ -100,6 +100,28 @@
                 opacity: 0;
             }
         }
+
+        &._lazy {
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: inherit;
+                z-index: 18;
+                background-image: linear-gradient(100deg, $main-color 8%, $link-color 18%, $main-color 33%);
+                background-size: 200% 100%;
+                animation: 2s shine linear infinite;
+            }
+
+            @keyframes shine {
+                100% {
+                    background-position-x: -200%;
+                }
+            }
+        }
     }
 
     &__img {
@@ -107,6 +129,7 @@
         left: 0;
         top: 0;
         width: 100%;
+        @include loader(30px);
 
         $countZi: 0;
 
@@ -249,6 +272,25 @@
             width: 100%;
             border-radius: inherit;
         }
+
+        @media screen and (min-width: #{$desktop}) {
+            img {
+                @include loader(192px);
+            }
+        }
+        @media screen and (max-width: #{$desktop}) {
+            position: relative;
+            padding-top: 56.25%;
+            overflow: hidden;
+
+            img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                @include loader(100%)
+            }
+        }
     }
 
     &__main {
@@ -387,16 +429,20 @@
         @media screen and (min-width: #{$tabletL}) {
             right: 100px;
             width: 229px;
+            @include loader(250px);
+
         }
         @media screen and (max-width: #{$tabletL}) {
             right: 24px;
             top: 14px;
             width: 201px;
+            @include loader(200px);
         }
         @media screen and (max-width: #{$tabletM}) {
             width: 229px;
             top: 32%;
             right: 0;
+            @include loader(150px);
         }
     }
 }
@@ -483,6 +529,7 @@
     &__img {
         position: absolute;
         pointer-events: none;
+        @include loader(150px);
 
         @media screen and (min-width: #{$tabletL}) {
             right: -7rem;
@@ -530,6 +577,7 @@
             border-radius: inherit;
             width: 100%;
             height: 100%;
+            border: 0;
         }
     }
 

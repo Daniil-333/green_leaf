@@ -62,6 +62,7 @@ class Base {
             success: function (el) {
                 const $parent = $(el).parent();
                 if($parent.hasClass('_lazy')) $parent.removeClass('_lazy');
+                if($parent.parent().hasClass('_lazy')) $parent.parent().removeClass('_lazy');
             },
             // error: function (el, err) {
             //     console.log(el, 'data attribute is missing')
