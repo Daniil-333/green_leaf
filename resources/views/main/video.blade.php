@@ -13,7 +13,7 @@
 
             <div class="video__right _lazy">
                 <x-spinner></x-spinner>
-                <iframe data-src="https://vkvideo.ru/video_ext.php?oid=-8089324&id=456243664&hash=00da413740201fe8" allowfullscreen allow="encrypted-media; fullscreen; picture-in-picture" title="Linkin Park" class="b-lazy"></iframe>
+                <iframe data-src="https://vkvideo.ru/video_ext.php?oid=-8089324&id=456243664&hash=00da413740201fe8" allowfullscreen allow="autoplay; encrypted-media; fullscreen; picture-in-picture" title="Linkin Park" class="b-lazy"></iframe>
             </div>
         </div>
     </div>
