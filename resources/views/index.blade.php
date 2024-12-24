@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('title')
-@parent Оптовые поставки электронных компонентов | из Китая день в день
+@parent Единая Россия |
 @endsection
 
 @section('content')

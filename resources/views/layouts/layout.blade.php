@@ -8,6 +8,8 @@
     <meta name="description" content="description">
     <meta name="keywords" content="keywords">
 
+    <link rel="canonical" href="{{ url()->current() }}">
+
     <link rel="shortcut icon" href="{{ asset('favicon.jpeg') }}">
     <title>@section('title')@show</title>
 
