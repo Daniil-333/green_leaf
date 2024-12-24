@@ -374,6 +374,7 @@
         top: 50%;
         transform: translateY(-50%);
         width: calc(100% - 36px);
+        @include loader(100px);
 
         @media screen and (max-width: #{$tabletM}) {
             transform: none;

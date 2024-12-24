@@ -3,8 +3,8 @@
     <div class="quiz__container">
         <div class="quiz__content">
             <picture>
-                <source srcset="" type="image/webp" data-srcset="{{ asset("/storage/img/union.webp") }}">
-                <img src="" data-src="{{ asset("/storage/img/union.png") }}" alt="" class="quiz__bg b-lazy">
+                <source srcset="{{ $loader_secondary }}" type="image/webp" data-srcset="{{ asset("/storage/img/union.webp") }}">
+                <img src="{{ $loader_secondary }}" data-src="{{ asset("/storage/img/union.png") }}" alt="" class="quiz__bg b-lazy">
             </picture>
 
             <div class="quiz__left">
