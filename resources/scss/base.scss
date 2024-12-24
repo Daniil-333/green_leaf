@@ -1,14 +1,21 @@
 @use 'sass:math';
+@use "vars/colors";
+@use "vars/variables";
+@use "base/mixin";
 
-html {}
+@include mixin.font('Montserrat', 'Montserrat-Regular', 400, 'normal');
+@include mixin.font('Montserrat', 'Montserrat-Medium', 500, 'normal');
+@include mixin.font('Montserrat', 'Montserrat-SemiBold', 600, 'normal');
+@include mixin.font('Montserrat', 'Montserrat-Bold', 700, 'normal');
+
 
 body {
-  font-family: $fontFamily;
+  font-family: variables.$fontFamily;
   width: 100%;
   min-height: 100%;
-  color: $txt-color;
+  color: colors.$txt-color;
   line-height: 1;
-  background: $fon-color;
+  background: colors.$fon-color;
 
   &._locked {
       position: fixed;
@@ -16,7 +23,7 @@ body {
       overflow: hidden;
     }
   &._fixPadding {
-      @media screen and (min-width: #{$desktop}) {
+      @media screen and (min-width: #{variables.$desktop}) {
         padding-right: 17px;
       }
     }
@@ -25,12 +32,12 @@ body {
 .container, [class*="__container"] {
   width: 100%;
 
-  @if ($containerWidth>0) {
-    max-width: $containerWidth + px;
+  @if (variables.$containerWidth>0) {
+    max-width: variables.$containerWidth + px;
     margin: 0 auto;
   }
-  @if ($containerPadding>0) {
-    padding: 0 math.div($containerPadding, 2) + px;
+  @if (variables.$containerPadding>0) {
+    padding: 0 math.div(variables.$containerPadding, 2) + px;
   }
 }
 

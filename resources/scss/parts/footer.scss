@@ -1,6 +1,9 @@
+@use "../vars/colors";
+@use "../vars/variables";
+
 .footer {
     color: #ffffff;
-    background: $secondary-color;
+    background: colors.$secondary-color;
 
 
     &__content {
@@ -9,10 +12,10 @@
         font-weight: 500;
         line-height: 1.19;
 
-        @media screen and (min-width: #{$tabletM}) {
+        @media screen and (min-width: #{variables.$tabletM}) {
             padding: 200px 0 180px;
         }
-        @media screen and (max-width: #{$tabletM}) {
+        @media screen and (max-width: #{variables.$tabletM}) {
           padding: 130px 0;
         }
     }

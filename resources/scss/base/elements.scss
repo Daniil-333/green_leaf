@@ -1,3 +1,6 @@
+@use "../vars/colors";
+@use "../vars/variables";
+
 .ui {
 
   &-input {
@@ -131,7 +134,7 @@
         ~ .ui-checkbox__label {
             color: #ffffff;
             text-align: center;
-            background: $main-color;
+            background: colors.$main-color;
             gap: 8px;
 
           &::after {
@@ -148,7 +151,7 @@
       color: #323232;
       display: flex;
       align-items: center;
-      background: $fon-color;
+      background: colors.$fon-color;
       border-radius: inherit;
       padding: .5rem 1rem;
       pointer-events: none;
@@ -175,45 +178,44 @@
   line-height: 1;
   height: 41px;
   color: #ffffff;
-  background-color: $link-color;
+  background-color: colors.$link-color;
   border-radius: 100px;
   white-space: nowrap;
   padding: 12px 32px;
   transition: .3s;
 
   &_secondary {
-    background-color: $secondary-color;
+    background-color: colors.$secondary-color;
 
     @media screen and (any-hover: hover) {
       &:hover {
-        background-color: $link-color;
+        background-color: colors.$link-color;
       }
       &:active {
-        background-color: $active-color;
+        background-color: colors.$active-color;
       }
     }
   }
 
   &_thirdy {
-    background-color: $main-color;
+    background-color: colors.$main-color;
 
     @media screen and (any-hover: hover) {
       &:hover {
-        background-color: $link-color;
+        background-color: colors.$link-color;
       }
       &:active {
-        background-color: $active-color;
+        background-color: colors.$active-color;
       }
     }
   }
 
   @media screen and (any-hover: hover) {
     &:hover {
-      background-color: $secondary-color;
+      background-color: colors.$secondary-color;
     }
-
     &:active {
-      background-color: $active-color;
+      background-color: colors.$active-color;
     }
   }
 }
@@ -223,7 +225,7 @@
   font-size: 2rem;
   line-height: 1.22;
 
-  @media screen and (max-width: #{$tabletL}) {
+  @media screen and (max-width: #{variables.$tabletL}) {
     font-size: 1.5rem;
   }
 }
@@ -235,10 +237,10 @@
 .heading {
   font-weight: 600;
 
-  @media screen and (min-width: #{$tabletL}) {
+  @media screen and (min-width: #{variables.$tabletL}) {
     font-size: 20px;
   }
-  @media screen and (max-width: #{$tabletL}) {
+  @media screen and (max-width: #{variables.$tabletL}) {
     font-size: 1rem;
   }
 }
@@ -247,17 +249,17 @@
 
   &._active {
     .like__icon {
-      background: $link-color;
+      background: colors.$link-color;
     }
   }
 
   &._zero {
     .like__icon {
-      background: $zero-color;
+      background: colors.$zero-color;
 
       >svg {
         path {
-          stroke: $link-color;
+          stroke: colors.$link-color;
         }
       }
     }
@@ -266,7 +268,7 @@
   &__wrap {
     display: flex;
     align-items: center;
-    background: $fon-color;
+    background: colors.$fon-color;
     border-radius: 100px;
     padding: 4px;
   }
@@ -277,7 +279,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: $active-color;
+    background: colors.$active-color;
     border-radius: 100px;
   }
 

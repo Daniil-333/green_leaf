@@ -1,8 +1,12 @@
+@use "../vars/colors";
+@use "../vars/variables";
+@use "../base/mixin";
+
 .main {
-    @media screen and (min-width: #{$tabletM}) {
+    @media screen and (min-width: #{variables.$tabletM}) {
         padding-top: 96px;
     }
-    @media screen and (max-width: #{$tabletM}) {
+    @media screen and (max-width: #{variables.$tabletM}) {
         padding-top: 54px;
     }
 }
@@ -15,10 +19,10 @@
         gap: 1rem ;
         padding: 2rem 0;
 
-        @media screen and (min-width: #{$tabletL}) {
+        @media screen and (min-width: #{variables.$tabletL}) {
             padding: 2rem 0;
         }
-        @media screen and (max-width: #{$tabletL}) {
+        @media screen and (max-width: #{variables.$tabletL}) {
             padding: 1rem 0;
         }
     }
@@ -29,7 +33,7 @@
         color: #B5B5B5;
 
         &._active {
-            color: $main-color;
+            color: colors.$main-color;
         }
 
         &:not(:first-child) {
@@ -53,23 +57,23 @@
 .promo {
 
     &__content {
-        @media screen and (min-width: #{$tabletM}) {
+        @media screen and (min-width: #{variables.$tabletM}) {
             padding: 2rem 0 0 0;
         }
 
-        @media screen and (max-width: #{$tabletM}) {
+        @media screen and (max-width: #{variables.$tabletM}) {
             padding: 20px 0 0 0;
         }
     }
 
     &__title {
-        @media screen and (min-width: #{$tabletL}) {
+        @media screen and (min-width: #{variables.$tabletL}) {
             margin-bottom: 2rem;
         }
-        @media screen and (max-width: #{$tabletL}) {
+        @media screen and (max-width: #{variables.$tabletL}) {
             margin-bottom: 1rem;
         }
-        @media screen and (max-width: #{$tabletM}) {
+        @media screen and (max-width: #{variables.$tabletM}) {
             margin-bottom: 45px;
         }
     }
@@ -77,7 +81,7 @@
     &__pictures {
         position: relative;
         height: 194px;
-        background: $link-color;
+        background: colors.$link-color;
         border-radius: 20px;
         overflow: hidden;
 
@@ -111,7 +115,7 @@
                 height: 100%;
                 border-radius: inherit;
                 z-index: 18;
-                background-image: linear-gradient(100deg, $main-color 8%, $link-color 18%, $main-color 33%);
+                background-image: linear-gradient(100deg, colors.$main-color 8%, colors.$link-color 18%, colors.$main-color 33%);
                 background-size: 200% 100%;
                 animation: 2s shine linear infinite;
             }
@@ -129,7 +133,7 @@
         left: 0;
         top: 0;
         width: 100%;
-        @include loader(30px);
+        @include mixin.loader(30px);
 
         $countZi: 0;
 
@@ -145,10 +149,10 @@
     }
 
     &__filter {
-        @media screen and (min-width: #{$tabletL}) {
+        @media screen and (min-width: #{variables.$tabletL}) {
             margin-top: 2rem;
         }
-        @media screen and (max-width: #{$tabletL}) {
+        @media screen and (max-width: #{variables.$tabletL}) {
             margin-top: 1rem;
 
             margin-right: -1rem;
@@ -167,11 +171,11 @@
 
 .achievements {
 
-    @media screen and (min-width: #{$tabletM}) {
+    @media screen and (min-width: #{variables.$tabletM}) {
         padding-top: 4rem;
     }
 
-    @media screen and (max-width: #{$tabletM}) {
+    @media screen and (max-width: #{variables.$tabletM}) {
         padding-top: 2rem;
     }
 
@@ -195,20 +199,20 @@
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         grid-gap: 20px;
 
-        @media screen and (min-width: #{$tabletL}) {
+        @media screen and (min-width: #{variables.$tabletL}) {
             padding: 2rem 0;
         }
-        @media screen and (max-width: #{$tabletL}) {
+        @media screen and (max-width: #{variables.$tabletL}) {
             padding: 1rem 0;
         }
-        @media screen and (max-width: #{$tabletM}) {
+        @media screen and (max-width: #{variables.$tabletM}) {
             grid-template-columns: 1fr;
             position: relative;
         }
     }
 
     &__item {
-        @media screen and (max-width: #{$tabletM}) {
+        @media screen and (max-width: #{variables.$tabletM}) {
             position: sticky;
 
             &:first-child {
@@ -244,7 +248,7 @@
     }
 
     &__btn {
-        @media screen and (max-width: #{$tabletL}) {
+        @media screen and (max-width: #{variables.$tabletL}) {
             width: 100%;
         }
     }
@@ -273,12 +277,12 @@
             border-radius: inherit;
         }
 
-        @media screen and (min-width: #{$desktop}) {
+        @media screen and (min-width: #{variables.$desktop}) {
             img {
-                @include loader(192px);
+                @include mixin.loader(192px);
             }
         }
-        @media screen and (max-width: #{$desktop}) {
+        @media screen and (max-width: #{variables.$desktop}) {
             position: relative;
             padding-top: 56.25%;
             overflow: hidden;
@@ -288,7 +292,7 @@
                 left: 0;
                 top: 0;
                 height: 100%;
-                @include loader(100%)
+                @include mixin.loader(100%)
             }
         }
     }
@@ -302,10 +306,10 @@
         font-weight: 600;
         margin-bottom: 8px;
 
-        @media screen and (min-width: #{$tabletL}) {
+        @media screen and (min-width: #{variables.$tabletL}) {
             font-size: 20px;
         }
-        @media screen and (max-width: #{$tabletL}) {
+        @media screen and (max-width: #{variables.$tabletL}) {
             font-size: 1rem;
         }
     }
@@ -319,13 +323,13 @@
     &__footer {
         display: flex;
 
-        @media screen and (min-width: #{$desktop}) {
+        @media screen and (min-width: #{variables.$desktop}) {
             align-items: center;
             justify-content: space-between;
             padding: 0 1rem 1rem;
 
         }
-        @media screen and (max-width: #{$desktop}) {
+        @media screen and (max-width: #{variables.$desktop}) {
             flex-direction: column;
             align-items: flex-start;
             gap: .5rem;
@@ -338,7 +342,7 @@
         font-size: 14px;
         line-height: 1.22;
         color: #ffffff;
-        background: $main-color;
+        background: colors.$main-color;
         border-radius: 100px;
         padding: .5rem 1rem;
     }
@@ -347,23 +351,23 @@
 .quiz {
     overflow: hidden;
 
-    @media screen and (min-width: #{$tabletL}) {
+    @media screen and (min-width: #{variables.$tabletL}) {
         padding-top: 8rem;
     }
-    @media screen and (max-width: #{$tabletL}) {
+    @media screen and (max-width: #{variables.$tabletL}) {
         padding-top: 4rem;
     }
 
     &__content {
         position: relative;
-        background: $main-color;
+        background: colors.$main-color;
         border-radius: 20px;
 
-        @media screen and (min-width: #{$tabletL}) {
+        @media screen and (min-width: #{variables.$tabletL}) {
             padding: 20px 1rem;
         }
         
-        @media screen and (max-width: #{$tabletM}) {
+        @media screen and (max-width: #{variables.$tabletM}) {
 
         }
     }
@@ -374,9 +378,9 @@
         top: 50%;
         transform: translateY(-50%);
         width: calc(100% - 36px);
-        @include loader(100px);
+        @include mixin.loader(100px);
 
-        @media screen and (max-width: #{$tabletM}) {
+        @media screen and (max-width: #{variables.$tabletM}) {
             transform: none;
             top: 6.5rem;
         }
@@ -387,11 +391,11 @@
         padding-bottom: 28px;
         padding-left: 26px;
 
-        @media screen and (max-width: #{$tabletL}) {
+        @media screen and (max-width: #{variables.$tabletL}) {
             padding-bottom: 33px;
             padding-left: 33px;
         }
-        @media screen and (max-width: #{$tabletM}) {
+        @media screen and (max-width: #{variables.$tabletM}) {
             padding-bottom: 267px;
             padding-top: 28px;
             padding-left: 23px;
@@ -408,10 +412,10 @@
             text-transform: uppercase;
         }
 
-        @media screen and (max-width: #{$tabletL}) {
+        @media screen and (max-width: #{variables.$tabletL}) {
             margin-bottom: 71px;
         }
-        @media screen and (max-width: #{$tabletM}) {
+        @media screen and (max-width: #{variables.$tabletM}) {
             font-size: 1.5rem;
             margin-bottom: 18px;
         }
@@ -427,34 +431,34 @@
         position: absolute;
         top: 0;
 
-        @media screen and (min-width: #{$tabletL}) {
+        @media screen and (min-width: #{variables.$tabletL}) {
             right: 100px;
             width: 229px;
-            @include loader(250px);
+            @include mixin.loader(250px);
 
         }
-        @media screen and (max-width: #{$tabletL}) {
+        @media screen and (max-width: #{variables.$tabletL}) {
             right: 24px;
             top: 14px;
             width: 201px;
-            @include loader(200px);
+            @include mixin.loader(200px);
         }
-        @media screen and (max-width: #{$tabletM}) {
+        @media screen and (max-width: #{variables.$tabletM}) {
             width: 229px;
             top: 32%;
             right: 0;
-            @include loader(150px);
+            @include mixin.loader(150px);
         }
     }
 }
 
 .video {
 
-    @media screen and (min-width: #{$tabletL}) {
+    @media screen and (min-width: #{variables.$tabletL}) {
         padding: 8rem 0;
     }
 
-    @media screen and (max-width: #{$tabletL}) {
+    @media screen and (max-width: #{variables.$tabletL}) {
       padding: 4rem 0;
     }
 
@@ -463,13 +467,13 @@
         display: grid;
         gap: 20px;
 
-        @media screen and (min-width: #{$desktop}) {
+        @media screen and (min-width: #{variables.$desktop}) {
             grid-template-columns: 380px 1fr;
         }
-        @media screen and (max-width: #{$desktop}) {
+        @media screen and (max-width: #{variables.$desktop}) {
             grid-template-columns: 317px 1fr;
         }
-        @media screen and (max-width: #{$tabletL}) {
+        @media screen and (max-width: #{variables.$tabletL}) {
             grid-template-columns: 1fr;
             gap: 1rem;
         }
@@ -481,14 +485,14 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
-        background: $secondary-color;
+        background: colors.$secondary-color;
         border-radius: 20px;
         overflow: hidden;
 
-        @media screen and (min-width: #{$tabletL}) {
+        @media screen and (min-width: #{variables.$tabletL}) {
             padding: 2rem 1.5rem;
         }
-        @media screen and (max-width: #{$tabletL}) {
+        @media screen and (max-width: #{variables.$tabletL}) {
             border-radius: 1rem;
             padding: 25px 20px;
         }
@@ -500,15 +504,15 @@
         line-height: 1.22;
         color: #ffffff;
 
-        @media screen and (max-width: #{$desktop}) {
+        @media screen and (max-width: #{variables.$desktop}) {
             font-size: 28px;
         }
-        @media screen and (max-width: #{$tabletL}) {
+        @media screen and (max-width: #{variables.$tabletL}) {
             font-size: 1.5rem;
             max-width: 276px;
             margin-bottom: 72px;
         }
-        @media screen and (max-width: #{$tabletM}) {
+        @media screen and (max-width: #{variables.$tabletM}) {
           max-width: 208px;
             margin-bottom: 44px;
         }
@@ -519,10 +523,10 @@
         line-height: 1.167;
         height: 33px;
 
-        @media screen and (min-width: #{$tabletM}) {
+        @media screen and (min-width: #{variables.$tabletM}) {
           padding: .5rem 1rem;
         }
-        @media screen and (max-width: #{$tabletM}) {
+        @media screen and (max-width: #{variables.$tabletM}) {
           padding: 7px 14px;
         }
     }
@@ -530,19 +534,19 @@
     &__img {
         position: absolute;
         pointer-events: none;
-        @include loader(150px);
+        @include mixin.loader(150px);
 
-        @media screen and (min-width: #{$tabletL}) {
+        @media screen and (min-width: #{variables.$tabletL}) {
             right: -7rem;
             top: 50%;
             width: 100%;
         }
-        @media screen and (max-width: #{$tabletL}) {
+        @media screen and (max-width: #{variables.$tabletL}) {
             width: 320px;
             top: 1rem;
             right: -3rem;
         }
-        @media screen and (max-width: #{$tabletM}) {
+        @media screen and (max-width: #{variables.$tabletM}) {
             width: 280px;
             top: 2rem;
             right: -6rem;
@@ -559,7 +563,7 @@
         align-items: center;
         justify-content: center;
 
-        @media screen and (max-width: #{$tabletL}) {
+        @media screen and (max-width: #{variables.$tabletL}) {
             border-radius: 1rem;
         }
 
