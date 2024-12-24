@@ -567,6 +567,10 @@
             border-radius: 1rem;
         }
 
+        svg {
+            display: none;
+        }
+
         &._lazy {
             &::before {
                 content: url(/public/storage/img/icon/play-circle.svg);
@@ -579,6 +583,16 @@
                 height: 40px;
                 z-index: 20;
             }
+
+            svg {
+                display: block;
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
         }
 
         >iframe {
@@ -589,7 +603,6 @@
             width: 100%;
             height: 100%;
             border: 0;
-            @include mixin.loader(100px)
         }
     }
 
