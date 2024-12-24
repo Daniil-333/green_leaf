@@ -6,7 +6,7 @@
                 <h2 class="video__title">Посмотрите и&nbsp;убедитесь сами</h2>
                 <button type="button" class="video__btn btn btn_thirdy">Видео</button>
                 <picture>
-                    <source srcset="{{ $loader_main }}" type="image/webp" data-srcset="{{ asset("/storage/img/bear2.webp") }}">
+                    <source srcset="{{ $loader_main }}" type="image/webp" data-srcset="{{ asset("/img/bear2.webp") }}">
                     <img src="{{ $loader_main }}" data-src="{{ asset("/storage/img/bear2.png") }}" alt="" class="video__img b-lazy">
                 </picture>
             </div>

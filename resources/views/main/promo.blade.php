@@ -22,9 +22,9 @@
                                 'postfix_name' => 'tablet',
                             ],
                         ] as $dir => $bear)
-                        <source srcset="{{ $loader_main }}" media="(max-width: {{ $bear['size'] }}px)" data-srcset="{{ asset("/storage/img/bears/$dir/hero-{$bear['postfix_name']}-bear$i.png") }}">
+                        <source srcset="{{ $loader_main }}" media="(max-width: {{ $bear['size'] }}px)" data-srcset="{{ asset("/img/bears/$dir/hero-{$bear['postfix_name']}-bear$i.png") }}">
                         @endforeach
-                        <img src="{{ $loader_main }}" data-src="{{ asset("/storage/img/bears/desktop/hero-bear$i.png") }}" alt="" class="promo__img promo__img_{{ $i }} b-lazy">
+                        <img src="{{ $loader_main }}" data-src="{{ asset("/img/bears/desktop/hero-bear$i.png") }}" alt="" class="promo__img promo__img_{{ $i }} b-lazy">
                     </picture>
 
                 @endfor
@@ -36,7 +36,7 @@
                         <div class="ui-toggle__main">
                             <div data-drop-btn class="ui-toggle__btn">
                                 <span>Приоритеты</span>
-                                <img src="{{ asset('/storage/img/icon/arrow.svg') }}" alt="" class="ui-toggle__icon">
+                                <img src="{{ asset('/img/icon/arrow.svg') }}" alt="" class="ui-toggle__icon">
                             </div>
                             <div class="ui-toggle__list">
                                 @foreach($filterPriority as $priority)

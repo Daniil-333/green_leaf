@@ -12,4 +12,5 @@
         @include('main.quiz')
         @include('main.video')
     </main>
+
 @endsection
